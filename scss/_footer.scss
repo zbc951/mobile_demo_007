@@ -1,0 +1,79 @@
+footer {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $footerNav_BG;
+    border-radius: 40px 40px 0 0;
+    border: 2px solid $border_01;
+    padding: 0 2rem;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+
+    ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        
+        li {
+            width: calc(100% / 5);
+            height: 100%;
+            position: relative;
+
+            a {
+                width: 100%;
+                height: 90%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px 20px 0 0;
+                padding: 0.2rem;
+                position: absolute;
+                bottom: 0;
+
+                .fNav_ic {
+                    width: 3vh;
+                    height: 3vh;
+                    margin-bottom: 2px;
+                    background-position-y: 0%;
+
+                    &.home {
+                        height: 2.9vh;
+                    }
+                    &.promotion {
+                        width: 3.5vh;
+                    }
+                    &.member {
+                        width: 3.5vh;
+                    }
+                    &.cs {
+                        width: 3.5vh;
+                    }
+                }
+
+                p {
+                    width: 100%;
+                    color: $footerFont;
+                    font-size: 1vh;
+                    font-weight: bold;
+                    text-align: center;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis
+                }
+            }
+
+            &:hover,&:active,&.active {
+                a {
+                    background: $footerNavHOV_BG;
+                }
+                .fNav_ic {
+                    background-position-y: 100%;
+                }
+            }
+        }
+    }
+}

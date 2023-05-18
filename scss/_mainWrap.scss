@@ -1,0 +1,334 @@
+.mainWrap {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1rem;
+    
+    .mq {
+        width: 100%;
+        height: 57px;
+        padding: 0 1rem;
+        position: relative;
+        z-index: 20;
+
+        .title {
+            width: 32%;
+            height: 4vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $mqBG;
+            border-radius: 50px;
+            position: absolute;
+            left: 0;
+            top: -35%;
+            z-index: 10;
+
+            &::before {
+                content: "";
+                width: 16px;
+                height: 16px;
+                background: $nav_ACT;
+                border-radius: 50px;
+                position: absolute;
+                top: 18%;
+                right: -7px;
+            }
+
+            p {
+                color: $mqTitle;
+                font-size: 0.875rem;
+                font-weight: bold;
+                white-space: nowrap;
+            }
+        }
+
+        .textBox {
+            width: 100%;
+            height: 57%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $textBoxBG;
+            border-radius: 30px;
+            position: relative;
+            z-index: 7;
+
+            .inner {
+                width: 95%;
+                height: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid $mq_Border;
+                border-radius: 30px;
+                overflow: hidden;
+
+                .content {
+                    color: $mqTitle;
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                    white-space: nowrap;
+                    padding-left: 20px;
+                    animation: mqText 6s linear infinite;
+
+                    @keyframes mqText {
+                        0% {
+                            transform: translateX(150%);
+                        }
+                        100% {
+                            transform: translateX(-85%);
+                        }
+                    }
+                }
+            }
+
+            &::before {
+                content: "";
+                width: 55px;
+                height: 25px;
+                background: $mqDeco;
+                border-radius: 50px;
+                position: absolute;
+                bottom: -13px;
+                right: -15px;
+                z-index: 7;
+            }
+        }
+    }
+
+    .ad {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+
+        &.swiper {
+            .swiper-wrapper {
+                height: auto;
+                .swiper-slide {
+                    height: auto !important;
+                    font-size: 0;
+
+                    img {
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .quickBtn {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .left {
+            width: 48%;
+            height: auto;
+
+            .memberBlock {
+                width: 100%;
+                height: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .member_ic {
+                    width: 5.5vw;
+                    height: 5.5vw;
+                    margin-right: 0.5rem;
+                }
+
+                p {
+                    color: $memeber_info;
+                    font-size: 0.775rem;
+                    font-weight: bold;
+                    white-space: nowrap;
+                    margin: 1.5vh 0;
+                }
+            }
+
+            .btnLine {
+                width: 100%;
+                height: 4vh;
+                display: flex;
+                justify-content: space-between;
+
+                button {
+                    width: auto;
+                    height: 90%;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 0.4875rem;
+
+                    &:first-child {
+                        @include mainBtn;
+                        font-size: 0.875rem;
+                        border-radius: 3px;
+                    }
+
+                    &:last-child {
+                        @include subBtn;
+                        font-size: 0.875rem;
+                        border-radius: 3px;
+                    }
+                }
+           }
+        }
+
+        .right {
+            width: 47%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0 0;
+
+            button {
+                width: calc(91.5% /3);
+                height: 6.5vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: $quickBtn_bg;
+                border: 0.2rem solid $quickBtn_border;
+                border-radius: 7px;
+                position: relative;
+                font-size: 0.875rem;
+                font-weight: bold;
+
+                &::before {
+                    content: "";
+                    width: 84%;
+                    height: 84%;
+                    border: 1px solid $quickBtn_innerborder;
+                    border-radius: 3px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+        }
+    }
+
+    .gameType {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+
+        .top {
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            z-index: 10;
+
+            li {
+                width: 100%;
+                height: 0;
+                padding-top: 89.799%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-position-y: 0%;
+                transition: transform 0.3s;
+                position: relative;
+                cursor: pointer;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                p {
+                    color: $gameType_Font;
+                    font-size: 0.575rem;
+                    font-weight: bold;
+                    text-align: center;
+                    white-space: nowrap;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                &:active,&.active {
+                    background-position-y: 100%;
+
+                    p {
+                        color: $mainFont;
+                    }
+                }
+            }
+        }
+
+        .midLine {
+            width: 100%;
+            height: 6.5vh;
+            position: relative;
+
+            p {
+                color: $mainFont;
+                font-size: 1.1rem;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .linedeco {
+                width: 5.9%;
+                height: 0;
+                padding-top: 4.5%;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: 0.05s ease-in;
+            }
+        }
+
+        .bottom {
+            width: 100%;
+            height: auto;
+            padding: 4% 0;
+
+            .gtContent {
+                width: 100%;
+                height: auto;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1vh;
+                padding-bottom: 7vh;
+
+                .gameBlock {
+                    width: 100%;
+                    height: 100%;
+                    display: none;
+
+                    &.display {
+                        display: block;
+                    }
+
+                    .gamePic {
+                        width: 100%;
+                        padding-top: 156%;
+                    }
+                }
+            }
+        }
+    }
+}
